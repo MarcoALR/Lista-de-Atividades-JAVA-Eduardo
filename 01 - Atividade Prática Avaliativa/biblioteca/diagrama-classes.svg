@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760">
+  <defs>
+    <style>
+      .bg { fill: #f7f9fb; }
+      .box { fill: #ffffff; stroke: #263238; stroke-width: 1.6; }
+      .head { fill: #e8f0fe; stroke: #263238; stroke-width: 1.6; }
+      .title { font: 700 18px Arial, sans-serif; fill: #1f2933; }
+      .text { font: 14px Arial, sans-serif; fill: #263238; }
+      .small { font: 12px Arial, sans-serif; fill: #455a64; }
+      .line { stroke: #263238; stroke-width: 1.7; fill: none; }
+      .dash { stroke: #263238; stroke-width: 1.7; fill: none; stroke-dasharray: 7 5; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1120" height="760"/>
+  <text x="560" y="38" text-anchor="middle" class="title" font-size="24">Sistema de Biblioteca - Diagrama de Classes</text>
+
+  <g transform="translate(70,85)">
+    <rect class="box" width="250" height="120"/>
+    <rect class="head" width="250" height="34"/>
+    <text x="125" y="23" text-anchor="middle" class="title">Usuario</text>
+    <text x="125" y="56" text-anchor="middle" class="small">&lt;&lt;abstract&gt;&gt;</text>
+    <text x="18" y="82" class="text">- nome: String</text>
+    <text x="18" y="104" class="text">- email: String</text>
+  </g>
+
+  <g transform="translate(30,300)">
+    <rect class="box" width="245" height="115"/>
+    <rect class="head" width="245" height="34"/>
+    <text x="122" y="23" text-anchor="middle" class="title">Membro</text>
+    <text x="18" y="62" class="text">- matricula: String</text>
+    <text x="18" y="88" class="text">+ cadastrar() / editar()</text>
+  </g>
+
+  <g transform="translate(315,300)">
+    <rect class="box" width="245" height="115"/>
+    <rect class="head" width="245" height="34"/>
+    <text x="122" y="23" text-anchor="middle" class="title">Funcionario</text>
+    <text x="18" y="62" class="text">- cargo: String</text>
+    <text x="18" y="88" class="text">+ cadastrarMembro()</text>
+  </g>
+
+  <g transform="translate(460,85)">
+    <rect class="box" width="280" height="105"/>
+    <rect class="head" width="280" height="34"/>
+    <text x="140" y="23" text-anchor="middle" class="title">Gerenciavel</text>
+    <text x="140" y="56" text-anchor="middle" class="small">&lt;&lt;interface&gt;&gt;</text>
+    <text x="20" y="82" class="text">+ listar()</text>
+  </g>
+
+  <g transform="translate(825,160)">
+    <rect class="box" width="245" height="125"/>
+    <rect class="head" width="245" height="34"/>
+    <text x="122" y="23" text-anchor="middle" class="title">Livro</text>
+    <text x="18" y="62" class="text">- titulo: String</text>
+    <text x="18" y="84" class="text">- autor: String</text>
+    <text x="18" y="106" class="text">- disponivel: boolean</text>
+  </g>
+
+  <g transform="translate(825,380)">
+    <rect class="box" width="245" height="135"/>
+    <rect class="head" width="245" height="34"/>
+    <text x="122" y="23" text-anchor="middle" class="title">Emprestimo</text>
+    <text x="18" y="62" class="text">- data: LocalDate</text>
+    <text x="18" y="84" class="text">- livro: Livro</text>
+    <text x="18" y="106" class="text">- membro: Membro</text>
+  </g>
+
+  <g transform="translate(410,510)">
+    <rect class="box" width="350" height="165"/>
+    <rect class="head" width="350" height="34"/>
+    <text x="175" y="23" text-anchor="middle" class="title">Biblioteca</text>
+    <text x="18" y="62" class="text">- livros: ArrayList&lt;Livro&gt;</text>
+    <text x="18" y="84" class="text">- membros: ArrayList&lt;Membro&gt;</text>
+    <text x="18" y="106" class="text">- emprestimos: ArrayList&lt;Emprestimo&gt;</text>
+    <text x="18" y="134" class="text">+ adicionar, editar, remover e listar</text>
+  </g>
+
+  <g transform="translate(825,620)">
+    <rect class="box" width="245" height="78"/>
+    <rect class="head" width="245" height="34"/>
+    <text x="122" y="23" text-anchor="middle" class="title">BibliotecaException</text>
+    <text x="18" y="60" class="text">trata erros do sistema</text>
+  </g>
+
+  <path class="line" d="M152 300 L152 250 L195 250 L195 225"/>
+  <path class="line" d="M437 300 L437 250 L195 250"/>
+  <polygon points="195,205 183,225 207,225" fill="#ffffff" stroke="#263238" stroke-width="1.7"/>
+  <text x="265" y="242" class="small">heranca</text>
+
+  <path class="dash" d="M600 190 L585 510"/>
+  <text x="600" y="352" class="small">define listar()</text>
+
+  <path class="line" d="M410 560 L275 390"/>
+  <text x="318" y="462" class="small">lista de membros</text>
+
+  <path class="line" d="M760 548 L825 252"/>
+  <text x="778" y="392" class="small">lista de livros</text>
+
+  <path class="line" d="M760 610 L825 458"/>
+  <text x="780" y="526" class="small">lista de emprestimos</text>
+
+  <path class="line" d="M760 655 L825 660"/>
+  <text x="775" y="685" class="small">usa excecoes</text>
+</svg>
